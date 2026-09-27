@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/geist-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/geist-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/geist-mono-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('/fonts/geist-mono-latin-ext-wght-normal.woff2') format('woff2-variations');
+  unicode-range:
+    U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+    U+A720-A7FF;
+}
+
+/* The live page ground. Registered so section tone changes interpolate instead of jumping. */
+@property --ground {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #0a0807;
+}
+
+@theme {
+  --color-graphite: #0a0807;
+  --color-ground: var(--ground);
+  --color-charcoal: #15100e;
+  --color-plum: #1c0e14;
+  --color-paper: #f5ecdf;
+  --color-fog: #b8ab9c;
+  --color-dim: #8f8377;
+  --color-line: #2e2420;
+  --color-ember: #ff6a2b;
+  --color-flare: #f0457a;
+  --color-gold: #ffb547;
+
+  /* Paper-ground chapter: deeper inks keep WCAG AA contrast on #F5ECDF */
+  --color-ink: #1a1411;
+  --color-ink-muted: #5a4f46;
+  --color-rule: #dccfbe;
+  --color-ember-deep: #a8361a;
+  --color-gold-deep: #7a5410;
+  --color-flare-deep: #b0204f;
+
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1.4;
+  --text-label--letter-spacing: 0.08em;
+  --text-meta: 0.8125rem;
+  --text-meta--line-height: 1.5;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.6;
+  --text-lede: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --text-lede--line-height: 1.35;
+  --text-title: clamp(2rem, 1.2rem + 3.4vw, 4.25rem);
+  --text-title--line-height: 0.98;
+  --text-title--letter-spacing: -0.04em;
+  --text-display: clamp(2.75rem, 1rem + 7.6vw, 9rem);
+  --text-display--line-height: 0.9;
+  --text-display--letter-spacing: -0.05em;
+  --text-numeral: clamp(3.5rem, 2rem + 6vw, 8rem);
+  --text-numeral--line-height: 0.85;
+  --text-numeral--letter-spacing: -0.06em;
+
+  --ease-ledger: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-molten: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-trace: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --spacing-page: clamp(1.25rem, 4vw, 4rem);
+  --spacing-nav: 3.5rem;
+}
+
+@utility bg-ember-gradient {
+  background-image: linear-gradient(100deg, var(--color-gold), var(--color-ember) 45%, var(--color-flare));
+}
+
+@utility text-ember-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-gold),
+    var(--color-ember) 30%,
+    var(--color-flare) 60%,
+    var(--color-ember) 80%,
+    var(--color-gold)
+  );
+  background-size: 250% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@custom-variant choreo {
+  @media (min-width: 64rem) and (min-height: 43rem) and (prefers-reduced-motion: no-preference) {
+    @slot;
+  }
+}
+
+@custom-variant fine-pointer {
+  @media (pointer: fine) and (hover: hover) {
+    @slot;
+  }
+}

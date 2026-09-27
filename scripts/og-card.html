@@ -1,0 +1,119 @@
+<!doctype html>
+<!-- Source for public/og.png. Open /scripts/og-card.html on the dev server and capture a 1200×630 screenshot. -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      @font-face {
+        font-family: 'Geist';
+        src: url('/fonts/geist-latin-wght-normal.woff2') format('woff2');
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: 'Geist Mono';
+        src: url('/fonts/geist-mono-latin-wght-normal.woff2') format('woff2');
+        font-weight: 100 900;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      html,
+      body {
+        width: 1200px;
+        height: 630px;
+        background: #0a0807;
+        color: #f5ecdf;
+        font-family: 'Geist', system-ui, sans-serif;
+        overflow: hidden;
+      }
+      .card {
+        position: relative;
+        width: 1200px;
+        height: 630px;
+        padding: 44px 60px 0;
+      }
+      .mono {
+        font-family: 'Geist Mono', ui-monospace, monospace;
+        font-size: 17px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b8ab9c;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+      }
+      .ember {
+        color: #ff6a2b;
+      }
+      .name {
+        margin-top: 26px;
+        font-size: 196px;
+        line-height: 0.8;
+        letter-spacing: -0.055em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+      .name span {
+        display: block;
+      }
+      .name .last {
+        text-align: right;
+        background: linear-gradient(100deg, #ffb547, #ff6a2b 45%, #f0457a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        padding-right: 8px;
+      }
+      .photo {
+        position: absolute;
+        left: 60px;
+        bottom: 0;
+        width: 560px;
+      }
+      .photo img {
+        display: block;
+        width: 100%;
+      }
+      .tag {
+        position: absolute;
+        right: 60px;
+        bottom: 56px;
+        width: 520px;
+        font-size: 40px;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        font-weight: 600;
+      }
+      .tag em {
+        font-style: normal;
+        background: linear-gradient(100deg, #ffb547, #ff6a2b 45%, #f0457a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .tag .mono {
+        display: block;
+        margin-top: 18px;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        font-weight: 450;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="top mono">
+        <span><span class="ember">●</span>&nbsp; Full Stack .NET Engineer / FinTech &amp; ERP</span>
+        <span>Kaduwela, Sri Lanka</span>
+      </div>
+      <div class="name"><span>Akila</span><span class="last">Udara</span></div>
+      <div class="photo"><img src="/images/portrait-cut-1000.webp" alt="" /></div>
+      <p class="tag">
+        Building software for systems that have to <em>work.</em>
+        <span class="mono">C# · ASP.NET Core · Angular · SQL Server</span>
+      </p>
+    </div>
+  </body>
+</html>

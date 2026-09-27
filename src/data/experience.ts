@@ -1,0 +1,77 @@
+import type { Experience } from './types.ts'
+
+/** Ordered oldest to newest; the career trace reads left to right. */
+export const experience: Experience[] = [
+  {
+    id: 'vdeploy',
+    company: 'V-Deploy',
+    shortName: 'V-Deploy',
+    role: 'Software Developer — Internship',
+    start: '2021-02',
+    end: '2021-09',
+    weight: 'foundation',
+    summary: 'Foundation layer: responsive UI and asynchronous interaction on ASP.NET MVC.',
+    responsibilities: [
+      'Built responsive UI components with HTML5, CSS3, JavaScript, and ASP.NET MVC Razor Views.',
+      'Improved interactive behavior with jQuery, reducing page reloads and improving perceived performance.',
+      'Participated in sprint planning, daily standups, and code reviews.',
+    ],
+    keyResponsibilities: [0, 1, 2],
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'jQuery', 'ASP.NET MVC', 'Razor Views'],
+    trace: ['Sprint planning', 'Build', 'Code review'],
+  },
+  {
+    id: 'scienter',
+    company: 'Scienter Technologies (Pte) Ltd',
+    shortName: 'Scienter',
+    role: 'Software Engineer',
+    titles: [{ role: 'Associate Software Engineer' }, { role: 'Software Engineer' }],
+    start: '2022-06',
+    end: '2024-10',
+    weight: 'primary',
+    summary:
+      'Enterprise maintenance and delivery on the eFinancials leasing platform: defects, features, UAT and production releases.',
+    responsibilities: [
+      'Diagnosed and resolved complex defects across the eFinancials leasing platform, including .NET business logic, stored procedures, SQL query performance, and error-handling edge cases.',
+      'Implemented new features and code modifications, coordinating end-to-end releases across UAT and live production environments with zero unplanned downtime.',
+      'Conducted structured testing and validation against financial-industry standards and client-agreed acceptance criteria.',
+      'Acted as a direct liaison with clients during acceptance testing, gathering feedback and translating it into actionable development tasks.',
+      'Contributed to internal knowledge-transfer sessions and onboarding of new team members on the eFinancials codebase.',
+    ],
+    keyResponsibilities: [0, 1, 2, 3],
+    technologies: ['.NET Framework', 'SQL Server', 'T-SQL', 'Stored procedures', 'SSRS'],
+    trace: ['Incident', 'Diagnosis', 'Fix', 'Validation', 'Release'],
+  },
+  {
+    id: 'finap',
+    company: 'Fintechnology Asia Pacific (FINAP)',
+    shortName: 'FINAP',
+    role: 'Software Engineer',
+    start: '2024-11',
+    end: null,
+    weight: 'primary',
+    summary:
+      'Current production engineering chapter: full-stack financial products across the whole lifecycle.',
+    responsibilities: [
+      'Research, design, and develop full-stack web applications using .NET Framework with intuitive front-end UIs and robust backend business logic for financial products.',
+      'Generate regulatory and operational reports with SSRS.',
+      'Write complex stored procedures and queries against SQL Server and Oracle DB to support financial workflows.',
+      'Own the full software development lifecycle: requirements, design, development, code review, QA, deployment.',
+      'Manage source code and branching strategy with Git/SourceTree.',
+      'Support Jenkins CI/CD pipelines for stable, repeatable deployments.',
+      'Collaborate with business analysts and stakeholders to translate financial-domain requirements into technical specifications and working software.',
+    ],
+    keyResponsibilities: [0, 2, 3, 5, 6],
+    technologies: [
+      '.NET Framework',
+      'ASP.NET Core 8',
+      'Angular 17+',
+      'SQL Server',
+      'Oracle DB',
+      'SSRS',
+      'Git / SourceTree',
+      'Jenkins',
+    ],
+    trace: ['Research', 'Design', 'Build', 'Review', 'QA', 'Deploy'],
+  },
+]
