@@ -58,6 +58,24 @@ The owner asked for more motion, stronger design craft, creative colour, their r
 
 **Budget and legibility.** The WebGL field is damped across the lower strip of the hero, where the trace and metadata labels sit, so those labels stay at 4.5:1 or better. Kinetic headings split only when they come within one viewport of the fold and play from an IntersectionObserver instead of a ScrollTrigger. Choreographed sections share one ScrollTrigger refresh per frame, and the portrait shader compiles after the field is on screen. Lighthouse (local preview): mobile performance 89–94, desktop 93, accessibility, best practices and SEO 100, CLS 0.
 
+## Cutout hero and Projects revision (owner request, Sep 2026)
+
+The owner asked for no effects over the photo, a distinctive treatment of their name, responsive fixes, and a page for the projects in `D:\Projects`. This supersedes the portrait and WebGL parts of the Ember revision.
+
+**Portrait.** The transparent cutout ships unmodified (AVIF q72 / WebP q90 with full alpha quality, 560 and 820 px, 820 being the source's native width). There is no shader, blend, filter, mask or clip on it; its entrance animates only opacity and position. The WebGL field stays behind the hero and never touches the photo. More sharpness needs a higher-resolution source photo.
+
+**Name.** The `h1` is the name set as two giant lines behind the portrait: "AKILA" in cream on the left and "UDARA" in the ember gradient on the right. Only the letters move (a staggered rise and a slight pointer drift).
+
+**Projects page (`/projects/`).** A second Vite entry (`projects/index.html`) shares the site shell: nav, footer, palette, cursor and Lenis.
+- *Truth rule.* Every string in `src/data/builds.ts` comes from the project's own code, README or running screens. There are no dates, metrics or roles without evidence. Links appear only after they were checked: the live Magul Mate app, the three Vercel demos, and GitHub repos that are publicly reachable.
+- *Screens.* Each project was run locally and captured at 1440×900 into `assets-src/builds/`. `npm run builds` converts them to AVIF/WebP at 800 and 1440 px. Screens are shown as captured, with no overlays; square theme artwork is letterboxed, not cropped.
+- *Gaps are stated.* Builds that couldn't be captured get a typographic card (Pocket POS, Player). Partial captures carry a note: NSIP's data views, ThreadCap's early web shell, the Flutter POS theme artwork, and MOJO's stand-in photography.
+- *Layout.* A numbered index with filters (All, Products, Client sites, Tools). On large screens, a sticky preview cross-fades to the build under the pointer or keyboard focus; smaller screens get image-first cards. Each build then has an `#slug` record with a gallery, features, stack and links. Builds are also listed in the command palette and the section indicator.
+- *Preload.* The projects page preloads the first build's cover image. If the first entry in `builds.ts` changes, update the preload in `projects/index.html`.
+- *Home teaser.* "Selected builds" (`#builds`) after the case files: four featured builds and a link to the full page.
+
+**Verification.** Lighthouse on the local preview (mobile): home 92–93 and projects 92–94 for performance, with 100 for accessibility, best practices and SEO, and CLS 0 on both pages. No horizontal overflow from 320 to 1920 px, and the hero keeps its name and photo without WebGL.
+
 ## Owner-configured content
 
 - LinkedIn: `https://www.linkedin.com/in/akilaudara96` (confirmed by owner).
